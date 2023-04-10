@@ -1,0 +1,15 @@
+Z:\4\4ID\Prog\TP02-CensoNacional_TorreWalsh\bin\Debug\net6.0\TP02-CensoNacional_TorreWalsh.exe
+Z:\4\4ID\Prog\TP02-CensoNacional_TorreWalsh\bin\Debug\net6.0\TP02-CensoNacional_TorreWalsh.deps.json
+Z:\4\4ID\Prog\TP02-CensoNacional_TorreWalsh\bin\Debug\net6.0\TP02-CensoNacional_TorreWalsh.runtimeconfig.json
+Z:\4\4ID\Prog\TP02-CensoNacional_TorreWalsh\bin\Debug\net6.0\TP02-CensoNacional_TorreWalsh.dll
+Z:\4\4ID\Prog\TP02-CensoNacional_TorreWalsh\bin\Debug\net6.0\TP02-CensoNacional_TorreWalsh.pdb
+Z:\4\4ID\Prog\TP02-CensoNacional_TorreWalsh\obj\Debug\net6.0\TP02-CensoNacional_TorreWalsh.csproj.AssemblyReference.cache
+Z:\4\4ID\Prog\TP02-CensoNacional_TorreWalsh\obj\Debug\net6.0\TP02-CensoNacional_TorreWalsh.GeneratedMSBuildEditorConfig.editorconfig
+Z:\4\4ID\Prog\TP02-CensoNacional_TorreWalsh\obj\Debug\net6.0\TP02-CensoNacional_TorreWalsh.AssemblyInfoInputs.cache
+Z:\4\4ID\Prog\TP02-CensoNacional_TorreWalsh\obj\Debug\net6.0\TP02-CensoNacional_TorreWalsh.AssemblyInfo.cs
+Z:\4\4ID\Prog\TP02-CensoNacional_TorreWalsh\obj\Debug\net6.0\TP02-CensoNacional_TorreWalsh.csproj.CoreCompileInputs.cache
+Z:\4\4ID\Prog\TP02-CensoNacional_TorreWalsh\obj\Debug\net6.0\TP02-CensoNacional_TorreWalsh.dll
+Z:\4\4ID\Prog\TP02-CensoNacional_TorreWalsh\obj\Debug\net6.0\refint\TP02-CensoNacional_TorreWalsh.dll
+Z:\4\4ID\Prog\TP02-CensoNacional_TorreWalsh\obj\Debug\net6.0\TP02-CensoNacional_TorreWalsh.pdb
+Z:\4\4ID\Prog\TP02-CensoNacional_TorreWalsh\obj\Debug\net6.0\TP02-CensoNacional_TorreWalsh.genruntimeconfig.cache
+Z:\4\4ID\Prog\TP02-CensoNacional_TorreWalsh\obj\Debug\net6.0\ref\TP02-CensoNacional_TorreWalsh.dll

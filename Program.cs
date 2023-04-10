@@ -3,18 +3,22 @@
     private static void Main(string[] args)
     {
         Dictionary<int,Persona> dicPersonas = new Dictionary<int, Persona>();
-        int eleccion=0,ingresado=0;
+        int eleccion=0,ingresado=0,modificado=0;
         do{
             eleccion=menuEjercicio();
             switch(eleccion){
                 case 1:
                 int dni=IngresarInt("Ingrese su DNI");
+                if(!dicPersonas.ContainsKey(dni)){
                 string ape=IngresarString("Ingrese su apellido");
                 string nom= IngresarString("Ingrese su nombre");
-                string mail=IngresarString("Ingrese su mail");
+                string mail=IngresarEmail("Ingrese su mail");
                 DateTime fnac=IngresarDatetime();
                 Persona numPersona=new Persona(dni,ape,nom,fnac,mail);
                 dicPersonas.Add(dni,numPersona);
+                }
+                else
+                Console.WriteLine("La persona ya existe, si desea modificar los datos, seleccione la opcion de Modificar Datos");
                 break;
                 case 2:
                 verLista(dicPersonas);
@@ -24,19 +28,77 @@
                 buscarPersona(dicPersonas,ingresado);
                 break;
                 case 4:
-                ingresado=IngresarInt("Ingrese el DNI de la persona a la cual se le desea cambiar el email");
-                cambiarMail(dicPersonas,ingresado);
+                ingresado=IngresarInt("Ingrese el DNI de la persona a la cual se le desea cambiar algún campo");
+                do{
+                    modificado=menuModificar();
+                    switch(modificado){
+                    case 1:
+                    cambiarApe(dicPersonas,ingresado);
+                    break;
+                    case 2:
+                    cambiarNom(dicPersonas,ingresado);
+                    break;
+                    case 3:
+                    cambiarFnac(dicPersonas,ingresado);
+                    break;
+                    case 4:
+                    cambiarMail(dicPersonas,ingresado);
+                    break;
+                    case 5:
+                    Console.WriteLine("Volviendo al menú principal");
+                    break;
+                }
+                Console.ReadKey();
+                }while(modificado!=5);
                 break;
             }
             Console.ReadKey();
         }while(eleccion!=5);
     }
+    static int menuModificar(){
+        int devolver;
+        do{
+            Console.WriteLine("1- Modificar Apellido");
+            Console.WriteLine("2- Modificar Nombre");
+            Console.WriteLine("3- Modificar Fecha de Nacimiento");
+            Console.WriteLine("4- Modificar Email");
+            Console.WriteLine("5- Salir");
+            devolver=int.Parse(Console.ReadLine());
+        }while(devolver<1||devolver>5);
+        return devolver;
+    }
     static void cambiarMail(Dictionary<int,Persona> dicPersonas, int ingresado){
         string nuevoMail="";
         if (dicPersonas.ContainsKey(ingresado)){
-            Console.WriteLine("Ingrese el nuevo email");
-            nuevoMail=Console.ReadLine();
+            nuevoMail=IngresarString("Ingrese el nuevo mail");
             dicPersonas[ingresado].Email=nuevoMail;
+        }
+        else
+        Console.WriteLine("No se encuentra el DNI");
+    }
+    static void cambiarApe(Dictionary<int,Persona> dicPersonas, int ingresado){
+        string nuevoApe;
+        if (dicPersonas.ContainsKey(ingresado)){
+            nuevoApe=IngresarString("Ingrese el nuebo apellido");
+            dicPersonas[ingresado].Apellido=nuevoApe;
+        }
+        else
+        Console.WriteLine("No se encuentra el DNI");
+    }
+    static void cambiarNom(Dictionary<int,Persona> dicPersonas, int ingresado){
+        string nuevoNom;
+        if (dicPersonas.ContainsKey(ingresado)){
+            nuevoNom=IngresarString("Ingrese el nuevo nombre");
+            dicPersonas[ingresado].Nombre=nuevoNom;
+        }
+        else
+        Console.WriteLine("No se encuentra el DNI");
+    }
+    static void cambiarFnac(Dictionary<int,Persona> dicPersonas, int ingresado){
+        DateTime nuevaFecha;
+        if (dicPersonas.ContainsKey(ingresado)){
+            nuevaFecha=IngresarDatetime();
+            dicPersonas[ingresado].FechaNacimiento=nuevaFecha;
         }
         else
         Console.WriteLine("No se encuentra el DNI");
@@ -89,6 +151,17 @@
         }while(!valido);
         return devolver;
     }
+    static string IngresarEmail(string mensaje){
+        string devolver;
+        bool valido=false;
+        do{
+            Console.WriteLine(mensaje);
+            devolver=Console.ReadLine();
+            if(devolver.IndexOf('@')<devolver.LastIndexOf('.'))
+            valido=true; 
+        }while(!valido);
+        return devolver;
+    }
     static string IngresarString(string mensaje){
         string devolver;
         Console.WriteLine(mensaje);
@@ -107,7 +180,7 @@
             Console.WriteLine("1- Cargar Nueva Persona");
             Console.WriteLine("2- Obtener Estadísticas del Censo");
             Console.WriteLine("3- Buscar Persona");
-            Console.WriteLine("4- Modificar Mail de una Persona");
+            Console.WriteLine("4- Modificar Datos de una Persona");
             Console.WriteLine("5- Salir");
             devolver=int.Parse(Console.ReadLine());
         }while(devolver<1||devolver>5);
